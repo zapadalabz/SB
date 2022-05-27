@@ -13,7 +13,7 @@ export default function ViewSkillsI(){
     
     useEffect(() => {
         async function getStudentData() {
-            const response = await fetch(`http://localhost:5000/api/${user.OrgUnitId}`);
+            const response = await fetch(`/api/${user.OrgUnitId}`);
         
             if (!response.ok) {
               const message = `An error occurred: ${response.statusText}`;
