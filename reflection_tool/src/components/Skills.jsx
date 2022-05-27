@@ -24,7 +24,7 @@ export default function Skills(){
         }
         //console.log(sample);
 
-        await fetch(`http://localhost:5000/api/update`, {
+        await fetch(`/api/update`, {
             method: "POST",
             body: JSON.stringify({OrgUnitId: user.OrgUnitId, email: user.email, skills: skills}),
             headers: {
@@ -49,7 +49,7 @@ export default function Skills(){
             OrgUnitId: searchParams.get("OrgUnitId")
         });
         async function getSkillsTemplate() {
-            const response = await fetch(`http://localhost:5000/api/skillsTemplate/${searchParams.get("OrgUnitId")}`);
+            const response = await fetch(`/api/skillsTemplate/${searchParams.get("OrgUnitId")}`);
         
             if (!response.ok) {
               const message = `An error occurred: ${response.statusText}`;
@@ -62,7 +62,7 @@ export default function Skills(){
           }
         
           getSkillsTemplate().then(async (templateSkills)=>{
-              const response = await fetch(`http://localhost:5000/api/skills/${searchParams.get("OrgUnitId")}/${searchParams.get("email")}`);
+              const response = await fetch(`/api/skills/${searchParams.get("OrgUnitId")}/${searchParams.get("email")}`);
               //const response = await fetch(`http://localhost:5000/api/skills/${searchParams.get("OrgUnitId")}/a@b.com`);
               if (!response.ok) {
                 const message = `An error occurred: ${response.statusText}`;
