@@ -33,7 +33,7 @@ export default function SkillsI(){
         
         setArray(tempArray);
         //console.log(tempArray);
-        await fetch(`http://localhost:5000/api/updateSkillsTemplate`, {
+        await fetch(`/api/updateSkillsTemplate`, {
             method: "POST",
             body: JSON.stringify({OrgUnitId: user.OrgUnitId, skills: tempArray}),
             headers: {
